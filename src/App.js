@@ -34,6 +34,7 @@ const app = new Clarifai.App({
 function App() {
   const [inputChange, setInputChange] = useState("");
   const [imgUrl, setImgUrl] = useState("");
+  const [food, setFood] = useState([]);
 
   const onInputChange = (e) => {
     setInputChange(e.target.value);
@@ -41,9 +42,11 @@ function App() {
 
   const onPredictBtn = () => {
     setImgUrl(inputChange)
-    console.log("Clicked!");
     app.models.predict(Clarifai.FOOD_MODEL, inputChange).then(response => {
-      console.log(response.outputs[0].data.concepts)
+      // console.log(response.outputs[0].data.concepts)
+      const data = response.outputs[0].data.concepts;
+      setFood(data);
+
     }).catch(err => {
       console.log(err);
     })
@@ -54,9 +57,9 @@ function App() {
       <Navigation />
       <Particles className="particles" params={particles} />
       <Logo />
-      <Rank />
+      <Rank food={food} />
       <InputForm onInputChange={onInputChange} onPredictBtn={onPredictBtn} />
-      <PredictComponent imgUrl={imgUrl} />
+      <PredictComponent imgUrl={imgUrl} food={food} />
     </div>
   );
 }
