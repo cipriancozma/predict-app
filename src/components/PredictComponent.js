@@ -4,8 +4,8 @@ import './PredictComponent.css';
 const PredictComponent = ({imgUrl}) => {
     return (
         imgUrl &&
-        <div>
-           <img src={imgUrl} alt="food" />
+        <div className="image">
+           <img src={imgUrl} alt="food" width="500px" height="auto" />
         </div> 
     )
 }

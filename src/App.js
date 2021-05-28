@@ -43,7 +43,7 @@ function App() {
     setImgUrl(inputChange)
     console.log("Clicked!");
     app.models.predict(Clarifai.FOOD_MODEL, inputChange).then(response => {
-      console.log(response)
+      console.log(response.outputs[0].data.concepts)
     }).catch(err => {
       console.log(err);
     })
