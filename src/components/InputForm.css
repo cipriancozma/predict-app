@@ -1,0 +1,18 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputForm {
+    width: 50%;
+    z-index: 1;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .inputForm {
+        width: 80%;
+    }
+} 

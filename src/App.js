@@ -1,23 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navigation from "./components/Navigation";
+import Logo from "./components/Logo";
+import InputForm from "./components/InputForm";
+import Rank from "./components/Rank";
+import Particles from "react-particles-js";
+import { useState } from "react";
+import Clarifai from 'clarifai';
+import PredictComponent from './components/PredictComponent';
+
+const particles = {
+  particles: {
+    number: {
+      value: 50,
+      density: {
+        enable: true,
+        value_area: 800,
+      },
+    },
+    line_linked: {
+      shadow: {
+        enable: true,
+        color: "#3CA9D1",
+        blur: 5,
+      },
+    },
+  },
+};
+
+const app = new Clarifai.App({
+  apiKey: 'c60c9270852d444e91b76a1aca825867'
+ });
 
 function App() {
+  const [inputChange, setInputChange] = useState("");
+  const [imgUrl, setImgUrl] = useState("");
+
+  const onInputChange = (e) => {
+    setInputChange(e.target.value);
+  };
+
+  const onPredictBtn = () => {
+    setImgUrl(inputChange)
+    console.log("Clicked!");
+    app.models.predict(Clarifai.FOOD_MODEL, inputChange).then(response => {
+      console.log(response)
+    }).catch(err => {
+      console.log(err);
+    })
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation />
+      <Particles className="particles" params={particles} />
+      <Logo />
+      <Rank />
+      <InputForm onInputChange={onInputChange} onPredictBtn={onPredictBtn} />
+      <PredictComponent imgUrl={imgUrl} />
     </div>
   );
 }
