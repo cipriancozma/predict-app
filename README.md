@@ -1,3 +1,8 @@
+# How to use Predict App
+Enter an url with the extension jpg and press the button "Try it!"
+
+After this, you should see the image you entered appear and the ingredients that are on it.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
