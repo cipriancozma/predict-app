@@ -39,6 +39,14 @@ function App() {
   const [food, setFood] = useState([]);
   const [route, setRoute] = useState("signin");
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [nameChanged, setNameChanged] = useState("");
+  const [user, setUser] = useState({
+    id: "",
+    name: "",
+    email: ""
+  })
+
+  
 
   const onInputChange = (e) => {
     setInputChange(e.target.value);
@@ -67,6 +75,18 @@ function App() {
     setRoute(route);
   }
 
+  const loadUser = (data) => {
+    setUser({
+      id: data.id,
+      name: data.name,
+      email: data.email
+    })
+  }
+
+  const handleNameChange = (name) => {
+      setNameChanged(name);
+  }
+
 
   return (
     <div className="App">
@@ -75,7 +95,7 @@ function App() {
       {route === "homepage" ? 
         <>
           <Logo />
-          <Rank food={food} />
+          <Rank food={food} name={nameChanged}/>
           <InputForm
             onInputChange={onInputChange}
             onPredictBtn={onPredictBtn}
@@ -85,9 +105,9 @@ function App() {
        
        : (
        route === "signup" ?
-       <SignUp onRouteChange={onRouteChange} /> 
+       <SignUp onRouteChange={onRouteChange} loadUser={loadUser} handleNameChange={handleNameChange} /> 
         : 
-        <SignIn onRouteChange={onRouteChange}/>
+        <SignIn onRouteChange={onRouteChange} loadUser={loadUser} handleNameChange={handleNameChange}/>
        )
       }
     </div>

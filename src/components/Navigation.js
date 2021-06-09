@@ -20,7 +20,7 @@ const Navigation = ({onRouteChange, isSignedIn}) => {
                 <div className="container-fluid">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item" style={{zIndex: "1"}}>
-                            <button className="btn btn-info" aria-current="page" href="#" onClick={() => onRouteChange("homepage")} >Sign In</button>
+                            <button className="btn btn-info" aria-current="page" href="#" onClick={() => onRouteChange("signin")} >Sign In</button>
                             <button className="btn btn-info" aria-current="page" href="#" onClick={() => onRouteChange("signup")} style={{marginLeft: "10px"}} >Sign Up</button>
 
                         </li>
