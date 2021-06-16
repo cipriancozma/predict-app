@@ -1,5 +1,8 @@
 # How to use Predict App
-Enter an url with the extension jpg and press the button "Try it!"
+If it's your first time on this page, please sign up with your name, email and password.
+After that you will be redirected to the start page.
+
+Here you can enter an url with the extension jpg and press the button "Try it!"
 
 After this, you should see the image you entered appear and the ingredients that are on it.
 
@@ -73,3 +76,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+FOR DEVs
+if clarifai is not working or is down, the face model API can be changed to this code: "c0c0ac362b03416da06ab3fa36fb58e3".
