@@ -1,5 +1,8 @@
 # How to use Predict App
-Enter an url with the extension jpg and press the button "Try it!"
+If it's your first time on this page, please sign up with your name, email and password.
+After that you will be redirected to the start page.
+
+Here you can enter an url with the extension jpg and press the button "Try it!"
 
 After this, you should see the image you entered appear and the ingredients that are on it.
 
