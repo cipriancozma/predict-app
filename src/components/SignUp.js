@@ -113,6 +113,7 @@ const SignUp = ({ onRouteChange, loadUser, handleNameChange }) => {
                 placeholder="Type your password"
                 value={password}
                 required
+                minLength="8"
               />
             </div>
             <div className="checkbox">
