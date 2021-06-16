@@ -38,7 +38,7 @@ const SignUp = ({ onRouteChange, loadUser, handleNameChange }) => {
     };
 
     axios
-      .post("http://localhost:3001/register", data, { headers })
+      .post("https://obscure-dusk-26513.herokuapp.com/register", data, { headers })
       .then((respone) => {
         setData(respone.data);
         console.log(respone.data)
