@@ -76,3 +76,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+FOR DEVs
+if clarifai is not working or is down, the face model API can be changed to this code: "c0c0ac362b03416da06ab3fa36fb58e3".
